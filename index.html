@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minh Hiền's Digital Portfolio ✨</title>
+    <title>Nguyễn Minh Hiền Portfolio</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,8 +14,8 @@
             --pastel-lavender: #e6e6fa;
             --star-gold: #ffe259;
             --accent-pink: #ffd3b6;
-            --glass-bg: rgba(15, 23, 42, 0.65);
-            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(15, 23, 42, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.12);
             --text-light: #f3f4f6;
         }
 
@@ -35,6 +35,16 @@
             color: var(--text-light);
             overflow-x: hidden;
             position: relative;
+        }
+
+        /* Ambient radial overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(13, 18, 48, 0.45) 0%, rgba(10, 14, 41, 0.9) 100%);
+            z-index: -2;
+            pointer-events: none;
         }
 
         /* Interactive Custom Cursor Trails */
@@ -401,7 +411,7 @@
         }
 
         .sim-container {
-            background: rgba(10, 14, 41, 0.8);
+            background: rgba(10, 14, 41, 0.65);
             border: 1px dashed var(--glass-border);
             border-radius: 16px;
             padding: 20px;
