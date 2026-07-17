@@ -14,9 +14,10 @@
             --pastel-lavender: #e6e6fa;
             --star-gold: #ffe259;
             --accent-pink: #ffd3b6;
-            --glass-bg: rgba(15, 23, 42, 0.45);
-            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-bg: rgba(15, 23, 42, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.15);
             --text-light: #f3f4f6;
+            --neon-glow: 0 0 15px rgba(255, 226, 89, 0.4);
         }
 
         * {
@@ -42,7 +43,7 @@
             content: '';
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(13, 18, 48, 0.45) 0%, rgba(10, 14, 41, 0.9) 100%);
+            background: radial-gradient(circle at 50% 50%, rgba(13, 18, 48, 0.45) 0%, rgba(10, 14, 41, 0.92) 100%);
             z-index: -2;
             pointer-events: none;
         }
@@ -56,7 +57,7 @@
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
-            box-shadow: 0 0 10px var(--star-gold);
+            box-shadow: var(--neon-glow);
             animation: fadeOutParticle 0.8s forwards ease-out;
         }
 
@@ -117,7 +118,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             color: var(--star-gold);
-            text-shadow: 0 0 10px rgba(255, 226, 89, 0.5);
+            text-shadow: var(--neon-glow);
             text-decoration: none;
             font-weight: bold;
         }
@@ -306,15 +307,15 @@
         ul.custom-list li {
             position: relative;
             padding-left: 25px;
-            margin-bottom: 10px;
-            line-height: 1.6;
+            margin-bottom: 12px;
+            line-height: 1.7;
         }
 
         ul.custom-list li::before {
             content: '✨';
             position: absolute;
             left: 0;
-            top: 1px;
+            top: 2px;
             font-size: 0.85rem;
         }
 
@@ -331,11 +332,25 @@
             border-left: 3px solid var(--star-gold);
             padding: 15px 20px;
             border-radius: 0 16px 16px 0;
+            transition: all 0.3s;
+        }
+
+        .goal-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-left-color: var(--accent-pink);
+            transform: translateX(5px);
         }
 
         .goal-item h4 {
             color: var(--star-gold);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .goal-item p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #cbd5e1;
         }
 
         /* Portfolio Details Section */
@@ -430,7 +445,7 @@
         .drive-task-btn:hover {
             background: var(--star-gold);
             color: var(--primary-dark);
-            box-shadow: 0 0 10px var(--star-gold);
+            box-shadow: var(--neon-glow);
             border-color: transparent;
         }
 
@@ -442,7 +457,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 380px;
+            min-height: 420px;
         }
 
         /* STEPPER FOR TASK 1 */
@@ -478,7 +493,7 @@
             background: var(--star-gold);
             color: var(--primary-dark);
             font-weight: bold;
-            box-shadow: 0 0 8px var(--star-gold);
+            box-shadow: var(--neon-glow);
         }
 
         .step-btn {
@@ -520,7 +535,7 @@
         }
 
         .article-scroll-box {
-            max-height: 280px;
+            max-height: 320px;
             overflow-y: auto;
             padding-right: 5px;
         }
@@ -529,8 +544,8 @@
             background: rgba(255,255,255,0.04);
             border: 1px solid var(--glass-border);
             border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
             font-size: 0.8rem;
             transition: all 0.3s;
         }
@@ -558,6 +573,7 @@
             font-family: inherit;
             font-size: 0.8rem;
             cursor: pointer;
+            transition: all 0.3s;
         }
 
         .con-btn.active {
@@ -572,9 +588,11 @@
             border-radius: 8px;
             font-family: monospace;
             font-size: 0.75rem;
-            line-height: 1.5;
-            min-height: 200px;
+            line-height: 1.6;
+            min-height: 240px;
             border: 1px solid rgba(255,255,255,0.1);
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
         /* CONFLICT SIMULATOR FOR TASK 4 */
@@ -589,13 +607,19 @@
             font-size: 0.8rem;
             align-self: center;
             margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+
+        .conflict-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
         }
 
         /* IMAGE COMPARISON FOR TASK 5 */
         .img-comp-box {
             position: relative;
             width: 100%;
-            height: 240px;
+            height: 260px;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--glass-border);
@@ -625,10 +649,12 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: all 0.3s;
         }
 
         .diag-option:hover {
             border-color: var(--star-gold);
+            background: rgba(255,255,255,0.08);
         }
 
         /* Summary Retrospective */
@@ -743,7 +769,7 @@
             background: linear-gradient(135deg, var(--star-gold), var(--accent-pink));
             color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 226, 89, 0.4);
+            box-shadow: var(--neon-glow);
             border-color: transparent;
         }
 
@@ -827,14 +853,14 @@
                     <span class="typewrite" data-words='["Nguyễn Minh Hiền", "Sinh Viên ULIS", "Sư Phạm Tiếng Anh"]'></span>
                 </h1>
                 <p class="hero-desc">
-                    Mình hiện là sinh viên chuyên ngành Sư phạm Tiếng Anh tại <strong>Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội (ULIS)</strong>. Đối với mình, công nghệ và giảng dạy ngoại ngữ là hai cánh buồm không thể tách rời giúp chắp cánh ước mơ truyền cảm hứng đến các thế hệ học sinh trong tương lai!
+                    Mình hiện là sinh viên chuyên ngành Sư phạm Tiếng Anh tại <strong>Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội (ULIS)</strong>. Đối với mình, việc kết hợp giữa kiến thức ngoại ngữ và công nghệ số là kim chỉ nam giúp hiện đại hóa phương pháp giảng dạy, kiến tạo lớp học thông minh trong tương lai.
                 </p>
-                <div class="card" style="padding: 20px; background: rgba(255,255,255,0.02);">
-                    <h3 style="color: var(--accent-pink); margin-bottom: 10px;"><i class="fa-solid fa-heart"></i> Sở thích của mình:</h3>
+                <div class="card" style="padding: 20px; background: rgba(255,255,255,0.02); margin-bottom: 20px;">
+                    <h3 style="color: var(--accent-pink); margin-bottom: 12px; font-family:'Playfair Display', serif;"><i class="fa-solid fa-heart"></i> Sở thích nổi bật</h3>
                     <ul class="custom-list">
-                        <li><strong>Nấu ăn:</strong> Giúp mình thư giãn, rèn luyện tính kiên nhẫn và mang đến niềm vui khi được chia sẻ những món ăn ngon với gia đình, bạn bè.</li>
-                        <li><strong>Học ngoại ngữ:</strong> Cơ hội tuyệt vời để mở rộng kiến thức, khám phá những nền văn hóa đa dạng và mài sắc phản xạ giao tiếp.</li>
-                        <li><strong>Đi du lịch:</strong> Trải nghiệm sâu sắc văn hóa địa phương, tích lũy thêm chất liệu thực tế giúp cuộc sống phong phú hơn.</li>
+                        <li><strong>Nấu ăn:</strong> Nấu ăn là nghệ thuật thử nghiệm. Mình đam mê khám phá các công thức ẩm thực mới để rèn luyện tính kiên nhẫn và gắn kết yêu thương với gia đình qua những món ăn tự làm.</li>
+                        <li><strong>Học ngoại ngữ:</strong> Không dừng lại ở việc trau dồi tiếng Anh chuyên ngành, việc học thêm ngôn ngữ mới giúp mình mở rộng tư duy, thấu cảm sâu sắc những nét đẹp văn hóa đa dạng.</li>
+                        <li><strong>Đi du lịch:</strong> Đi để học hỏi và tích lũy chất liệu cuộc sống. Những chuyến đi thực tế giúp mình làm phong phú thêm vốn sống và kiến thức thực tế để phục vụ công việc giảng dạy sau này.</li>
                     </ul>
                 </div>
             </div>
@@ -849,22 +875,46 @@
             </div>
             <div class="goals-grid">
                 <div>
-                    <h3 style="color: var(--accent-pink); margin-bottom: 15px;"><i class="fa-solid fa-bullseye"></i> Học tập & Định hướng dài hạn</h3>
-                    <ul class="custom-list">
-                        <li>Nâng cao kỹ năng sử dụng công nghệ số và công cụ trí tuệ nhân tạo để phục vụ đắc lực cho việc dạy học trong tương lai.</li>
-                        <li>Xây dựng tư duy số nhạy bén, khai thác AI một cách có trách nhiệm, đảm bảo tính liêm chính và trung thực học thuật.</li>
-                        <li>Rèn luyện năng lực ứng dụng AI vào nghiên cứu thông tin khoa học, tối ưu giải quyết vấn đề thực tiễn.</li>
-                        <li>Không ngừng cập nhật và làm mới bản thân trước các xu hướng công nghệ giáo dục đột phá.</li>
-                    </ul>
+                    <h3 style="color: var(--accent-pink); margin-bottom: 15px;"><i class="fa-solid fa-bullseye"></i> Mục tiêu học tập & Định hướng tương lai</h3>
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <div class="goal-item">
+                            <h4>Phát triển năng lực số</h4>
+                            <p>Nâng cao toàn diện kỹ năng sử dụng công cụ số và giải pháp AI thế hệ mới để hỗ trợ giảng dạy hiệu quả, tối ưu hóa các bài giảng trực quan sinh động.</p>
+                        </div>
+                        <div class="goal-item">
+                            <h4>Xây dựng tư duy AI có đạo đức</h4>
+                            <p>Định hình tư duy khai thác thông tin thông minh, bảo đảm tính liêm chính, minh bạch và có trách nhiệm khi tích hợp trí tuệ nhân tạo vào môi trường giáo dục.</p>
+                        </div>
+                        <div class="goal-item">
+                            <h4>Rèn luyện phản xạ giải quyết vấn đề</h4>
+                            <p>Ứng dụng AI vào nghiên cứu thông tin khoa học, phân tích dữ liệu, tự động hóa quản lý học liệu và giải quyết linh hoạt các thử thách sư phạm.</p>
+                        </div>
+                        <div class="goal-item">
+                            <h4>Không ngừng đổi mới bản thân</h4>
+                            <p>Chủ động cập nhật các xu hướng công nghệ giáo dục mới nhất để không bị tụt hậu, luôn sẵn sàng đón đầu làn sóng số hóa trường học.</p>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <h3 style="color: var(--accent-pink); margin-bottom: 15px;"><i class="fa-solid fa-passport"></i> Sứ mệnh của cuốn Sổ tay này</h3>
-                    <ul class="custom-list">
-                        <li><strong>Thể hiện năng lực:</strong> Trực quan hóa các sản phẩm thực tế và kỹ năng số mình đã rèn luyện qua từng bài học.</li>
-                        <li><strong>Lưu trữ hệ thống:</strong> Sắp xếp khoa học toàn bộ học liệu để dễ dàng kiểm tra, chia sẻ.</li>
-                        <li><strong>Đánh giá tiến trình:</strong> Ghi lại dấu mốc thay đổi và tiến bộ tư duy thực tế của mình.</li>
-                        <li><strong>Hồ sơ năng lực (Portfolio):</strong> Tạo dựng nền tảng chuyên nghiệp, chuẩn bị chu đáo cho kỳ thực tập và công việc tương lai.</li>
-                    </ul>
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <div class="goal-item" style="border-left-color: var(--accent-pink);">
+                            <h4>Trực quan hóa năng lực</h4>
+                            <p>Hệ thống lại một cách sinh động toàn bộ các bài tập thực hành cá nhân, minh chứng cho sự tiến bộ kỹ thuật số qua từng tuần học.</p>
+                        </div>
+                        <div class="goal-item" style="border-left-color: var(--accent-pink);">
+                            <h4>Lưu trữ học liệu khoa học</h4>
+                            <p>Quy hoạch và sắp xếp học liệu số một cách có tổ chức, tạo lập kho tài nguyên hữu ích dễ dàng tra cứu, truy cập mọi lúc mọi nơi.</p>
+                        </div>
+                        <div class="goal-item" style="border-left-color: var(--accent-pink);">
+                            <h4>Đánh giá tiến trình cá nhân</h4>
+                            <p>Ghi nhận trung thực chặng đường tư duy thực tế, nhận diện những khó khăn, thuận lợi để không ngừng cải thiện năng lực tự học.</p>
+                        </div>
+                        <div class="goal-item" style="border-left-color: var(--accent-pink);">
+                            <h4>Kiến tạo hồ sơ nghề nghiệp</h4>
+                            <p>Xây dựng một Digital Portfolio chỉn chu, chuyên nghiệp làm nền tảng vững vàng phục vụ cho hoạt động thực tập và ứng tuyển giảng dạy sau tốt nghiệp.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -903,8 +953,8 @@
                         <a href="https://drive.google.com/file/d/1SQvdzupCTCbJjk8ydEZJX73XFZpSr8xe/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 1</a>
                     </div>
                     <div class="task-body">
-                        <p><strong>Cơ sở thực hiện:</strong> Rèn luyện sự chuẩn chỉ trong quản trị dữ liệu học tập cá nhân trực tiếp trên máy tính Windows.</p>
-                        <p><strong>Bản chất 12 bước thực nghiệm:</strong> Thực hành mở rộng từ mở File Explorer, thiết lập thư mục mẹ <code>THUCHANH_NGUYENMINHHIEN</code>, tạo tệp <code>GhiChu.txt</code>, quản lý đổi tên tệp quan trọng, thiết lập các tệp phụ <code>dichuyen.txt</code>, thực hành di chuyển tệp vào thư mục con <code>TaiLieu</code>, và khôi phục an toàn từ Thùng rác.</p>
+                        <p><strong>Cơ sở thực hiện:</strong> Rèn luyện sự chuẩn chỉ trong quản trị dữ liệu học tập cá nhân trực tiếp trên máy tính Windows. Đối với một sinh viên Sư phạm, việc quản lý tài liệu học thuật khoa học là viên gạch đầu tiên giúp định hình tác phong làm việc chuẩn mực.</p>
+                        <p><strong>Nội dung chi tiết:</strong> Mình thực hành tuần tự 12 bước trực tiếp trên File Explorer: từ việc tạo dựng cấu trúc thư mục mẹ <code>THUCHANH_NGUYENMINHHIEN</code>, thiết lập tệp nháp <code>GhiChu.txt</code>, đổi tên thành <code>GhiChuQuanTrong.txt</code> để bảo vệ tài liệu giá trị cao, cho đến việc tổ chức di chuyển tệp tin vào thư mục con <code>TaiLieu</code>. Đồng thời rèn luyện kỹ năng dọn dẹp dữ liệu bằng cách xóa vĩnh viễn tệp <code>dichuyen.txt</code> (sử dụng tổ hợp phím Shift+Delete để bảo mật thông tin) và làm quen với cơ chế cứu hộ dữ liệu (Restore) tệp quan trọng từ Recycle Bin để bảo đảm an toàn tuyệt đối cho các học liệu nghiên cứu dài hạn.</p>
                         <p><strong>Bài học rút ra:</strong> Quản lý dữ liệu bừa bãi sẽ làm chậm tiến độ làm việc. Đặt tên tệp chuẩn hóa là bước đầu tiên để rèn luyện tính kiên nhẫn trong kỷ luật số.</p>
                     </div>
                 </div>
@@ -935,9 +985,8 @@
                         <a href="https://drive.google.com/file/d/1O3E7TNBE9kQPKZ59UbH9MMFyEZfSQAEn/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 2</a>
                     </div>
                     <div class="task-body">
-                        <p><strong>Cơ sở thực hiện:</strong> Phục vụ chủ đề nghiên cứu: <em>"Ứng dụng AI Chatbot phát triển kỹ năng nói tiếng Anh cho người học EFL"</em>.</p>
-                        <p><strong>Quá trình tìm kiếm:</strong> Trực tiếp rà quét các cơ sở dữ liệu học thuật quốc tế đỉnh cao Scopus và Web of Science. Mình kiên quyết nói không với Wikipedia hay các bài viết blog thiếu kiểm định khoa học.</p>
-                        <p><strong>Kết quả đánh giá 11 bài báo chất lượng:</strong> Phân loại nghiêm túc nguồn tin dựa trên uy tín tác giả, tạp chí phát hành, phương pháp nghiên cứu vững chãi (Meta-analysis hay Case Study).</p>
+                        <p><strong>Cơ sở thực hiện:</strong> Phục vụ chủ đề nghiên cứu: <em>"Ứng dụng AI Chatbot phát triển kỹ năng nói tiếng Anh cho người học EFL"</em>. Việc tìm kiếm nguồn thông tin chính quy là bệ phóng quan trọng cho mọi lập luận nghiên cứu giáo dục sau này.</p>
+                        <p><strong>Nội dung chi tiết:</strong> Mình đã từ bỏ thói quen tìm kiếm trên Wikipedia hay các trang blog đại trà thiếu kiểm định khoa học để trực tiếp khai thác hệ cơ sở dữ liệu học thuật quốc tế đỉnh cao Scopus và Web of Science. Tại đây, mình rà quét, chọn lọc và tiến hành thẩm định chéo 11 bài báo khoa học chất lượng cao từ các nhà xuất bản uy tín như Elsevier, Springer, IEEE, Frontiers và Cambridge University Press. Toàn bộ 11 tài liệu được phân tích sâu sắc dựa trên 5 tiêu chí: uy tín tác giả, vị thế cơ quan xuất bản, tính thực tiễn của phương pháp nghiên cứu, chỉ số trích dẫn khoa học và tính cập nhật thời gian để phân loại độ tin cậy rạch ròi.</p>
                         <p><strong>Bài học rút ra:</strong> Phương pháp nghiên cứu tổng hợp (Meta-analysis, Systematic review) luôn mang sức nặng khoa học lớn hơn một case study đơn lẻ.</p>
                     </div>
                 </div>
@@ -965,8 +1014,8 @@
                         <a href="https://drive.google.com/file/d/1Cf4tbRd9jUwEQSgD1jaVjFY5CIDrVj85/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 3</a>
                     </div>
                     <div class="task-body">
-                        <p><strong>Cơ sở thực hiện:</strong> So sánh hiệu quả phản hồi của 3 cấp độ Prompt (Cơ bản, Cải tiến, Nâng cao) trên mô hình Google Gemini đối với 3 tác vụ học tập.</p>
-                        <p><strong>Điểm nhấn kỹ thuật:</strong> Áp dụng linh hoạt kỹ thuật gán vai (Role prompting), tư duy từng bước (Chain-of-Thought) và phương pháp sư phạm Feynman (mô phỏng điều hòa nhiệt độ để giải thích Feedback Loop).</p>
+                        <p><strong>Cơ sở thực hiện:</strong> So sánh hiệu quả phản hồi của 3 cấp độ Prompt (Cơ bản, Cải tiến, Nâng cao) trên mô hình Google Gemini đối với 3 tác vụ học tập điển hình trong trường học.</p>
+                        <p><strong>Nội dung chi tiết:</strong> Tác vụ 1 tập trung tóm tắt tác phẩm học thuật của nhà văn Nam Cao, nâng cấp từ một câu lệnh tóm tắt sơ sài thành một bản tóm tắt cấu trúc súc tích chuẩn phong cách Abstract khoa học. Tác vụ 2 ứng dụng phương pháp Feynman giải thích khái niệm phức tạp 'Feedback Loop' (Vòng lặp phản hồi) cho người không chuyên thông qua ẩn dụ chiếc điều hòa nhiệt độ sinh động. Tác vụ 3 thiết kế bộ đề trắc nghiệm ngữ pháp thì Hiện tại đơn dựa trên Thang đo Bloom (Nhớ, Hiểu, Vận dụng), đồng thời tích hợp việc phân tích các lỗi tư duy thường gặp (Common Pitfalls) của người học Việt Nam (như thói quen chọn 'is boiling' cho hành động sự thật hiển nhiên do nhầm lẫn về trạng thái tạm thời).</p>
                         <p><strong>Bài học rút ra:</strong> Chất lượng phản hồi của AI tỉ lệ thuận với độ rõ ràng của bối cảnh và giới hạn (Constraints) do con người thiết lập.</p>
                     </div>
                 </div>
@@ -993,13 +1042,8 @@
                         <a href="https://drive.google.com/file/d/1-tVl6LGv2vmUoq00sUrRJc1thS7udvdZ/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 4</a>
                     </div>
                     <div class="task-body">
-                        <p><strong>Cơ sở thực hiện:</strong> Vận hành bài tập nhóm môn học CNS&AI thông qua bộ công cụ trực tuyến phối hợp.</p>
-                        <p><strong>Khó khăn thực tế & Giải pháp đột phá:</strong></p>
-                        <ul class="custom-list">
-                            <li><em>Quên cập nhật Trello:</em> Thiết lập tự động hóa Butler gửi mail cảnh báo, bắt buộc bình luận "Completed" mới được duyệt.</li>
-                            <li><em>Mâu thuẫn sửa bài song song trên Google Docs:</em> Áp dụng "Nguyên tắc Độc quyền" (Final Editor) và bắt buộc dùng Suggesting Mode thay vì sửa đè.</li>
-                            <li><em>Thiếu tập trung khi họp Meet:</em> Gửi Agenda trước 15 phút, dùng đồng hồ đếm ngược cho mỗi nội dung.</li>
-                        </ul>
+                        <p><strong>Cơ sở thực hiện:</strong> Vận hành bài tập nhóm môn học CNS&AI thông qua bộ công cụ trực tuyến phối hợp, xây dựng quy trình làm việc khoa học bất chấp khoảng cách địa lý.</p>
+                        <p><strong>Nội dung chi tiết:</strong> Nhóm kết hợp linh hoạt bộ năm: Trello quản trị tiến độ (To Do, Doing, Done), Google Drive thiết lập không gian lưu trữ chung `Bài tập nhóm CNS`, Google Docs soạn thảo kịch bản đồng thời, Zalo và Google Meet để họp hành. Trong quá trình làm việc, nhóm tự nhận diện và giải quyết 4 mâu thuẫn lớn: (1) Quên cập nhật Trello ➔ Sửa bằng cách cài Butler Automation gửi mail nhắc nhở tự động; (2) Học liệu thất lạc ➔ Sửa bằng cách tạo Checklist mẫu đính kèm Drive Link; (3) Chỉnh sửa đè nhau trên Google Docs ➔ Áp dụng nguyên tắc Độc quyền biên tập (Sole Editor) kết hợp bắt buộc dùng chế độ Suggesting; (4) Thiếu tập trung khi họp Meet ➔ Gửi Agenda trước 15 phút và đặt bộ đếm ngược thời gian thảo luận.</p>
                         <p><strong>Bài học rút ra:</strong> Công nghệ chỉ thực sự thăng hoa khi nhóm thiết lập được những "cam kết và nguyên tắc xã hội" chặt chẽ.</p>
                     </div>
                 </div>
@@ -1023,9 +1067,8 @@
                         <a href="https://drive.google.com/file/d/1_KIe-EbF7_cyW9rsAwMEoE--5JOqH8o8/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 5</a>
                     </div>
                     <div class="task-body">
-                        <p><strong>Cơ sở thực hiện:</strong> Thiết kế Poster cho chiến dịch marketing truyền thống súp lươn Nghệ An tiếp cận giới trẻ.</p>
-                        <p><strong>Quy trình phối hợp:</strong> Sử dụng Gemini phát triển slogan, Deep AI vẽ hình ảnh cốt lõi (Key Visual), và Canva AI hoàn thiện bố cục.</p>
-                        <p><strong>Sự can thiệp của con người (Human Touch):</strong> Bản vẽ thô của AI ban đầu cho ra súp lươn kiểu Nhật (Unagi). Mình phải tinh chỉnh prompt chi tiết về nghệ vàng, rau răm để giữ hồn cốt quê hương; đổi font chữ bị lỗi hiển thị tiếng Việt trên Canva sang bộ font Montserrat và Playfair Display Việt hóa.</p>
+                        <p><strong>Cơ sở thực hiện:</strong> Thiết kế Poster cho chiến dịch marketing truyền thông Súp lươn & Cháo lươn Nghệ An tiếp cận giới trẻ Gen Z sống tại thành thị lớn.</p>
+                        <p><strong>Nội dung chi tiết:</strong> Mình kết hợp nhịp nhàng chuỗi 3 công cụ: dùng Gemini phân tích insight khách hàng để viết slogan, Deep AI xuất hình ảnh món ăn chính (Key Visual), và Canva AI gợi ý layout poster. Thách thức lớn nhất là vượt qua định kiến văn hóa của AI (Deep AI liên tục kết xuất ra tô súp lươn sẫm màu Unagi kiểu Nhật như canh thuốc bắc). Bằng cách tinh chỉnh prompt chi tiết mô tả dải lươn xé nhỏ nhuộm nghệ vàng óng, nước dùng sánh đỏ cay nồng quyện sắc xanh của rau răm trên chiếc mẹt tre, mình thu được ảnh đạt 85% kỳ vọng. Cuối cùng, mình chuyển sang Canva sửa lỗi font chữ tiếng Việt, chuyển sang font Montserrat và Playfair Display Việt hóa sang trọng, bổ sung yếu tố nhận diện xứ Nghệ để tạo tác phẩm cân bằng thị giác cao.</p>
                         <p><strong>Bài học rút ra:</strong> AI thiếu đi sự thấu cảm văn hóa địa phương. Người thiết kế đóng vai trò như một "Giám đốc sáng tạo" chọn lọc và thổi linh hồn vào tác phẩm.</p>
                     </div>
                 </div>
@@ -1052,14 +1095,8 @@
                         <a href="https://drive.google.com/file/d/15ykIPWLwnwgLywF0QihnfeZ1hb9JS8xO/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 6</a>
                     </div>
                     <div class="task-body">
-                        <p><strong>Cơ sở thực hiện:</strong> Nghiên cứu chính sách học thuật số tại ULIS kết hợp so sánh đối chứng với VinUni và UEH trong việc thực hiện bài luận tiếng Anh.</p>
-                        <p><strong>Bộ nguyên tắc 7 chữ vàng của Hiền:</strong></p>
-                        <ul class="custom-list">
-                            <li><em>Chủ quyền tư duy & Tỷ lệ 80/20:</em> AI là phụ tá, tối thiểu 80% văn bản đến từ bộ óc tự thân.</li>
-                            <li><em>Vùng an toàn & Vùng cấm:</em> Chỉ dùng để brainstorm ý tưởng; nghiêm cấm sao chép thô đầu ra AI vào bài viết.</li>
-                            <li><em>Quy trình P.A.V.E & Kiểm chứng độc lập:</em> Luôn giả định AI có thể ảo giác thông tin.</li>
-                            <li><em>Minh bạch tuyệt đối:</em> Khai báo chi tiết bằng bản cam kết AI Statement.</li>
-                        </ul>
+                        <p><strong>Cơ sở thực hiện:</strong> Nghiên cứu chính sách học thuật số tại ULIS kết hợp so sánh đối chứng với VinUni và UEH trong việc thực hiện bài luận tiếng Anh chuyên ngành sư phạm ngoại ngữ.</p>
+                        <p><strong>Nội dung chi tiết:</strong> Trí tuệ nhân tạo là con dao hai lưỡi trong môi trường học thuật. Nếu lạm dụng, học sinh sẽ bị xói mòn tư duy viết độc lập. Mình đã phân tích sâu sắc các chính sách và đúc kết thành bộ quy tắc cá nhân gồm 7 nguyên tắc cốt lõi: Định vị tư duy (Chủ quyền tư duy, Tỷ lệ 80/20 - tối thiểu 80% văn bản là chất xám cá nhân), Phạm vi ứng dụng (Vùng an toàn để brainstorm ý tưởng, Vùng cấm không copy nguyên văn AI), Quy trình kiểm soát (Áp dụng P.A.V.E và Kiểm chứng nguồn tin độc lập để tránh ảo giác AI) và Đạo đức học thuật (Khai báo minh bạch qua bản cam kết AI Statement).</p>
                         <p><strong>Bài học rút ra:</strong> Dùng AI thông minh giúp ta rút ngắn quá trình thực hành, nhưng lười suy nghĩ sẽ biến ta thành một "năng lực ảo" trước các kỳ thi viết thực tế không có công nghệ hỗ trợ.</p>
                     </div>
                 </div>
@@ -1087,7 +1124,7 @@
         <div class="card">
             <h3 style="color: var(--star-gold); margin-bottom: 12px;"><i class="fa-solid fa-scroll"></i> Chiêm nghiệm cá nhân</h3>
             <p style="line-height: 1.7; font-size: 1rem; color: #d1d5db; margin-bottom: 20px;">
-                Quá trình xây dựng cuốn Portfolio này là một trải nghiệm vô cùng thú vị đối với mình. Từ suy nghĩ ban đầu đây chỉ đơn giản là một trang web để nộp bài tập, mình đã nhận ra đây chính là cơ hội vàng để nhìn lại cả một hành trình học hỏi, va vấp và trưởng thành trong học phần Công nghệ số và Trí tuệ nhân tạo. Nhìn sản phẩm dần thành hình từ những dòng nội dung rời rạc ban đầu trở thành một "cuốn sổ tay" hoàn chỉnh, mình cảm thấy vô cùng tự hào và hạnh phúc.
+                Quá trình xây dựng cuốn Portfolio này thực sự là một chuyến viễn du tri thức đáng nhớ. Ban đầu, mình chỉ nghĩ đây đơn giản là một trang lưu trữ học liệu để chấm điểm thông thường. Nhưng càng dấn sâu vào xây dựng, viết và chau chuốt từng đoạn văn, mình càng nhận ra đây là một tấm gương phản chiếu trung thực hành trình tư duy của bản thân. Việc làm sao để dung hòa giữa những quy chuẩn học thuật nghiêm ngặt của nhà trường với tiếng nói cá nhân tự nhiên, phóng khoáng là một bài toán khó, nhưng nhìn sản phẩm hoàn thiện hôm nay, mình cảm nhận được sự tự hào sâu sắc.
             </p>
 
             <table class="retro-table">
@@ -1101,16 +1138,16 @@
                 <tbody>
                     <tr>
                         <td>
-                            - Các công cụ AI ngày càng thông minh, giao diện trực quan dễ tiếp cận.<br>
-                            - Được sự hỗ trợ đắc lực và kết hợp ăn ý từ các thành viên trong nhóm dự án.
+                            - Các công cụ AI ngày càng phát triển thông minh, mở ra không gian tương tác trực quan cao.<br>
+                            - Được sự hướng dẫn tận tình từ giảng viên và sự đồng hành, hỗ trợ phối hợp ăn ý từ các thành viên trong nhóm dự án số.
                         </td>
                         <td>
-                            - Làm sao để cân bằng giữa nội dung học thuật nghiêm túc và giọng văn tự nhiên cá nhân.<br>
-                            - Tránh để trang web rơi vào lối mòn rập khuôn hay khô khan, sáo rỗng.
+                            - Thách thức lớn nhất là làm thế nào để cân bằng giữa tính học thuật khắt khe với giọng văn cá nhân, tránh rơi vào sự rập khuôn, khô khan.<br>
+                            - Phải tinh chỉnh và rèn luyện kỹ nghệ prompt cực kỳ tỉ mỉ để AI hiểu được sâu sắc chất liệu văn hóa bản địa.
                         </td>
                         <td>
-                            - Học được cách ứng dụng AI có kiểm soát, biến AI thành trợ thủ đắc lực thay vì phụ thuộc hoàn toàn.<br>
-                            - Biết cách diễn đạt lại (Paraphrase) nội dung hệ thống giữ trọn phong thái cá nhân.
+                            - Làm chủ công nghệ chứ không để công nghệ làm chủ. Biết cách sử dụng AI như một trợ lý đắc lực, kiểm soát đầu ra bằng tư duy độc lập.<br>
+                            - Thấu hiểu quy trình thiết kế thông tin, cách paraphrase nhuần nhuyễn để giữ trọn cá tính sư phạm của bản thân.
                         </td>
                     </tr>
                 </tbody>
