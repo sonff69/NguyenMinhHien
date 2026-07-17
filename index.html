@@ -399,6 +399,8 @@
             display: flex;
             gap: 10px;
             margin-bottom: 15px;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
         .p-badge {
@@ -408,6 +410,28 @@
             border-radius: 8px;
             font-size: 0.75rem;
             font-weight: bold;
+        }
+
+        .drive-task-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--glass-border);
+            color: var(--star-gold);
+            padding: 3px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s;
+        }
+
+        .drive-task-btn:hover {
+            background: var(--star-gold);
+            color: var(--primary-dark);
+            box-shadow: 0 0 10px var(--star-gold);
+            border-color: transparent;
         }
 
         .sim-container {
@@ -875,7 +899,8 @@
                 <div class="task-desc">
                     <h3>Bài 1: Thao tác cơ bản với Tệp tin và Thư mục</h3>
                     <div class="badge-bar">
-                        <span class="p-badge">Mục tiêu: Làm chủ hệ điều hành & Tổ chức học liệu khoa học</span>
+                        <span class="p-badge">Hệ thống & Thao tác</span>
+                        <a href="https://drive.google.com/file/d/1SQvdzupCTCbJjk8ydEZJX73XFZpSr8xe/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 1</a>
                     </div>
                     <div class="task-body">
                         <p><strong>Cơ sở thực hiện:</strong> Rèn luyện sự chuẩn chỉ trong quản trị dữ liệu học tập cá nhân trực tiếp trên máy tính Windows.</p>
@@ -906,7 +931,8 @@
                 <div class="task-desc">
                     <h3>Bài 2: Tìm kiếm & Thẩm định thông tin học thuật</h3>
                     <div class="badge-bar">
-                        <span class="p-badge">Mục tiêu: Đánh giá độ tin cậy của dữ liệu khoa học</span>
+                        <span class="p-badge">Nghiên cứu & Đánh giá</span>
+                        <a href="https://drive.google.com/file/d/1O3E7TNBE9kQPKZ59UbH9MMFyEZfSQAEn/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 2</a>
                     </div>
                     <div class="task-body">
                         <p><strong>Cơ sở thực hiện:</strong> Phục vụ chủ đề nghiên cứu: <em>"Ứng dụng AI Chatbot phát triển kỹ năng nói tiếng Anh cho người học EFL"</em>.</p>
@@ -918,9 +944,9 @@
                 <div class="sim-container">
                     <h4 style="color: var(--star-gold); margin-bottom: 10px; font-size: 0.95rem;"><i class="fa-solid fa-database"></i> Thư viện số 11 Tài liệu Thẩm định của Hiền</h4>
                     <div class="filter-bar">
-                        <button class="filter-tag active" onclick="filterArticles('all')">Tất cả</button>
-                        <button class="filter-tag" onclick="filterArticles('very')">Rất đáng tin cậy (Q1)</button>
-                        <button class="filter-tag" onclick="filterArticles('normal')">Đáng tin cậy</button>
+                        <button class="filter-tag active" onclick="filterArticles('all', this)">Tất cả</button>
+                        <button class="filter-tag" onclick="filterArticles('very', this)">Rất đáng tin cậy (Q1)</button>
+                        <button class="filter-tag" onclick="filterArticles('normal', this)">Đáng tin cậy</button>
                     </div>
                     <div class="article-scroll-box" id="article-list">
                         <!-- Loaded dynamically -->
@@ -935,7 +961,8 @@
                 <div class="task-desc">
                     <h3>Bài 3: Thiết kế Prompt hiệu quả trong học tập</h3>
                     <div class="badge-bar">
-                        <span class="p-badge">Mục tiêu: Làm chủ nghệ thuật giao tiếp với Gen AI</span>
+                        <span class="p-badge">Prompt Engineering</span>
+                        <a href="https://drive.google.com/file/d/1Cf4tbRd9jUwEQSgD1jaVjFY5CIDrVj85/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 3</a>
                     </div>
                     <div class="task-body">
                         <p><strong>Cơ sở thực hiện:</strong> So sánh hiệu quả phản hồi của 3 cấp độ Prompt (Cơ bản, Cải tiến, Nâng cao) trên mô hình Google Gemini đối với 3 tác vụ học tập.</p>
@@ -962,7 +989,8 @@
                 <div class="task-desc">
                     <h3>Bài 4: Sử dụng công cụ trực tuyến cho dự án nhóm</h3>
                     <div class="badge-bar">
-                        <span class="p-badge">Mục tiêu: Tối ưu hóa hiệu suất làm việc nhóm từ xa</span>
+                        <span class="p-badge">Hợp tác trực tuyến</span>
+                        <a href="https://drive.google.com/file/d/1-tVl6LGv2vmUoq00sUrRJc1thS7udvdZ/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 4</a>
                     </div>
                     <div class="task-body">
                         <p><strong>Cơ sở thực hiện:</strong> Vận hành bài tập nhóm môn học CNS&AI thông qua bộ công cụ trực tuyến phối hợp.</p>
@@ -991,7 +1019,8 @@
                 <div class="task-desc">
                     <h3>Bài 5: Sáng tạo nội dung đa phương tiện với Gen AI</h3>
                     <div class="badge-bar">
-                        <span class="p-badge">Mục tiêu: Phối hợp chuỗi công cụ Gen AI đa dạng</span>
+                        <span class="p-badge">Sáng tạo nội dung</span>
+                        <a href="https://drive.google.com/file/d/1_KIe-EbF7_cyW9rsAwMEoE--5JOqH8o8/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 5</a>
                     </div>
                     <div class="task-body">
                         <p><strong>Cơ sở thực hiện:</strong> Thiết kế Poster cho chiến dịch marketing truyền thống súp lươn Nghệ An tiếp cận giới trẻ.</p>
@@ -1019,7 +1048,8 @@
                 <div class="task-desc">
                     <h3>Bài 6: Đạo đức AI & Bộ nguyên tắc "Sử dụng AI có trách nhiệm"</h3>
                     <div class="badge-bar">
-                        <span class="p-badge">Mục tiêu: Đảm bảo liêm chính khoa học thời đại số</span>
+                        <span class="p-badge">Học thuật trách nhiệm</span>
+                        <a href="https://drive.google.com/file/d/15ykIPWLwnwgLywF0QihnfeZ1hb9JS8xO/view?usp=drive_link" target="_blank" class="drive-task-btn"><i class="fa-brands fa-google-drive"></i> Tài liệu gốc Bài 6</a>
                     </div>
                     <div class="task-body">
                         <p><strong>Cơ sở thực hiện:</strong> Nghiên cứu chính sách học thuật số tại ULIS kết hợp so sánh đối chứng với VinUni và UEH trong việc thực hiện bài luận tiếng Anh.</p>
@@ -1173,7 +1203,6 @@
             }
             setTimeout(type, speed);
         }
-        document.addEventListener('DOMContentLoaded', type);
 
         // TASK 1: 12-Step File Explorer Simulation Data
         const explorerSteps = [
@@ -1201,7 +1230,9 @@
             
             const dots = document.getElementsByClassName("step-dot");
             for(let i=0; i<dots.length; i++) dots[i].classList.remove("active");
-            dots[currentStep].classList.add("active");
+            if (dots[currentStep]) {
+                dots[currentStep].classList.add("active");
+            }
         }
         function nextStep() { currentStep = (currentStep + 1) % 12; renderStep(); }
         function prevStep() { currentStep = (currentStep - 1 + 12) % 12; renderStep(); }
@@ -1215,7 +1246,6 @@
             dot.onclick = () => { currentStep = i; renderStep(); };
             dotsContainer.appendChild(dot);
         }
-        renderStep();
 
         // TASK 2: 11 Academic Papers Data
         const articles = [
@@ -1232,7 +1262,7 @@
             { title: "SPEAK-BOT framework for English learning", author: "Syahputri, Kesha & Ismail (2025)", journal: "JEE, Indonesian Journal of English Education (Non-Q1)", method: "Design & Development Research (80 học sinh + 4 GV)", reliability: "normal", info: "Tác động khu vực, mức tin cậy trung bình khá" }
         ];
 
-        function filterArticles(type) {
+        function filterArticles(type, element) {
             const container = document.getElementById("article-list");
             container.innerHTML = "";
             const filtered = articles.filter(a => type === 'all' || a.reliability === type);
@@ -1247,11 +1277,12 @@
                 `;
             });
 
-            const tags = document.getElementsByClassName("filter-tag");
-            for(let i=0; i<tags.length; i++) tags[i].classList.remove("active");
-            event.currentTarget.classList.add("active");
+            if (element) {
+                const tags = document.getElementsByClassName("filter-tag");
+                for(let i=0; i<tags.length; i++) tags[i].classList.remove("active");
+                element.classList.add("active");
+            }
         }
-        filterArticles('all');
 
         // TASK 3: Prompts Comparison Console
         const promptData = {
@@ -1286,7 +1317,6 @@
                 else b.classList.remove("active");
             });
         }
-        switchPromptTask(1);
 
         // TASK 4: Google Docs Conflict Simulation
         function simulateConflict() {
@@ -1319,6 +1349,7 @@
 
         function switchAB(side) {
             const box = document.getElementById("ab-display-box");
+            if (!box) return;
             const data = abData[side];
             box.innerHTML = `
                 <div class="img-comp-side" style="background: rgba(10,14,41,0.9); z-index: 10;">
@@ -1330,10 +1361,13 @@
                 </div>
             `;
             
-            document.getElementById("ab-btn-a").className = side === 'a' ? "filter-tag active" : "filter-tag";
-            document.getElementById("ab-btn-b").className = side === 'b' ? "filter-tag active" : "filter-tag";
+            const btnA = document.getElementById("ab-btn-a");
+            const btnB = document.getElementById("ab-btn-b");
+            if (btnA && btnB) {
+                btnA.className = side === 'a' ? "filter-tag active" : "filter-tag";
+                btnB.className = side === 'b' ? "filter-tag active" : "filter-tag";
+            }
         }
-        switchAB('a');
 
         // TASK 6: AI Diagnostic Quiz
         function diagnoseAI(option) {
@@ -1353,6 +1387,15 @@
                 screen.innerHTML = `<strong>🛡️ Mức độ: Bảo thủ nhưng an toàn!</strong><br>Bạn rất tôn trọng quy định học thuật, nhưng bạn đang bỏ lỡ một trợ lý hữu ích cho khâu brainstorm ý tưởng. Hãy thử ứng dụng 'vùng an toàn' để khám phá nhé!`;
             }
         }
+
+        // On load initialization inside DOMContentLoaded to ensure elements are ready
+        document.addEventListener('DOMContentLoaded', function() {
+            type();
+            renderStep();
+            filterArticles('all', document.querySelector(".filter-bar .filter-tag"));
+            switchPromptTask(1);
+            switchAB('a');
+        });
     </script>
 </body>
 </html>
