@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minh Hiền's Digital Portfolio ✨</title>
+    <title>Nguyễn Minh Hiền Portfolio</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -626,6 +626,126 @@
             color: var(--star-gold);
         }
 
+        /* Beautiful Enhanced Footer Styles */
+        footer {
+            background: linear-gradient(to top, rgba(5, 7, 24, 0.95), rgba(10, 14, 41, 0.85));
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-top: 1px solid var(--glass-border);
+            padding: 60px 20px 30px;
+            position: relative;
+            z-index: 10;
+            color: #e5e7eb;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1.2fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--star-gold);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--accent-pink);
+            border-radius: 2px;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #9ca3af;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s, padding-left 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--star-gold);
+            padding-left: 5px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--pastel-lavender);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .social-btn:hover {
+            background: linear-gradient(135deg, var(--star-gold), var(--accent-pink));
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 226, 89, 0.4);
+            border-color: transparent;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .footer-socials {
+                justify-content: center;
+            }
+        }
+
         /* Responsive Layouts */
         @media (max-width: 900px) {
             .hero-container, .task-layout, .goals-grid {
@@ -968,15 +1088,37 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Beautiful Enhanced Footer -->
     <footer>
-        <div class="footer-logo">Nguyễn Minh Hiền ✨</div>
-        <p class="footer-note">Khoa Sư phạm Tiếng Anh - Trường Đại học Ngoại ngữ - ĐHQGHN</p>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4 class="footer-logo" style="margin-bottom:10px; font-family:'Playfair Display', serif; font-size:1.6rem; color:var(--star-gold);">Nguyễn Minh Hiền ✨</h4>
+                <p style="margin-bottom:15px; color:#9ca3af;">Cuốn sổ tay học tập lưu giữ hành trình học hỏi, làm chủ các công cụ công nghệ số và trí tuệ nhân tạo, chắp cánh cho ước mơ giảng dạy ngoại ngữ trong kỷ nguyên số.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Đơn vị & Lớp học</h4>
+                <p style="margin-bottom: 10px; color:#9ca3af;"><i class="fa-solid fa-graduation-cap" style="color:var(--accent-pink); margin-right:8px;"></i> Khoa Sư phạm Tiếng Anh</p>
+                <p style="margin-bottom: 10px; color:#9ca3af;"><i class="fa-solid fa-university" style="color:var(--accent-pink); margin-right:8px;"></i> Trường ĐH Ngoại ngữ - ĐHQGHN</p>
+                <p style="color:#9ca3af;"><i class="fa-solid fa-book" style="color:var(--accent-pink); margin-right:8px;"></i> Nhập môn Công nghệ số & Ứng dụng AI</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên kết nhanh</h4>
+                <ul class="footer-links">
+                    <li><a href="#intro"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem; margin-right:6px; color:var(--accent-pink);"></i> Giới thiệu bản thân</a></li>
+                    <li><a href="#goals"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem; margin-right:6px; color:var(--accent-pink);"></i> Mục tiêu học tập</a></li>
+                    <li><a href="#portfolio"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem; margin-right:6px; color:var(--accent-pink);"></i> Nhật ký dự án số</a></li>
+                    <li><a href="#summary"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem; margin-right:6px; color:var(--accent-pink);"></i> Tổng kết & Chiêm nghiệm</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nguyễn Minh Hiền. Thiết kế bằng cả trái tim dành cho sự nghiệp giảng dạy thời đại mới. 🌌</p>
         </div>
     </footer>
 
